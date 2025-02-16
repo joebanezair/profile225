@@ -11,30 +11,25 @@ import { Image } from "@heroui/image";
 import { Divider } from "@heroui/divider";
 
 
-
-
-
-
 export default function Home() {
-
   const EXPLst = [
     {
       title: "Yondu.Inc, Taguig City — Jr. QA Engr.",
-      month: "OCT 2024 - FEB 2025",
+      month: "2024 - 2025",
       jobdesc: "User Acceptance Testing (UAT Tester), Production (PROD Testing)",
-      joblink: "https://www.linkedin.com/in/joebanezair/"
+      joblink: "https://www.yondu.com/"
     },
     {
       title: "Zhiyuan Enterprise Group, Taguig City —  Jr. Programmer / UI/UX - Internship",
-      month: "MAR 2024 - JUNE 2024",
+      month: "2024",
       jobdesc: "React.js Native & Web Development - Redux",
-      joblink: ""
+      joblink: "https://www.facebook.com/zhiyuanenterprisegroupinc"
     },
     {
       title: "Sanford Marketing Corporation,  Taguig City — Fixed Asset Manager (SAP).",
-      month: "3 Months",
+      month: "2024",
       jobdesc: "Managing incoming goods, asset transfer, asset inventory management.",
-      joblink: ""
+      joblink: "https://phl.bizdirlib.com/node/187500"
     }
   ]
   const Edz = [
@@ -66,33 +61,8 @@ export default function Home() {
     },
   ]
 
-  const MyExp = (<>
-    <div className="gap-2 grid grid-cols-1 sm:grid-cols-2">
-      {EXPLst.map((item, index) => (<>
-        <Card key={index} radius="none" className="max-w-[100%]">
-          <CardHeader className="flex gap-3">
-            <div className="flex flex-col">
-              <p className="text-md">{item.title}</p>
-              <p className="text-small text-default-500">{item.month}</p>
-            </div>
-          </CardHeader>
-          <Divider />
-          <CardBody>
-            <p>{item.jobdesc}</p>
-          </CardBody>
-          <Divider />
-          <CardFooter>
-            <Link isExternal showAnchorIcon href={`${item.joblink}`}>
-              Visit Link
-            </Link>
-          </CardFooter>
-        </Card>
-      </>))}
-    </div>
-  </>)
-
   const Educations = (<>
-    <div className="gap-2 px-2 grid grid-cols-1 sm:grid-cols-1">
+    <div className="gap-3 px-0 grid grid-cols-1 sm:grid-cols-1">
       {Edz.map((item, index) => (<>
         <Card key={index} radius="none" className="max-w-[100%]">
           <CardHeader className="flex gap-3">
@@ -116,25 +86,25 @@ export default function Home() {
     </div>
   </>)
 
-const Projects = (<>
-  <div className="gap-2 grid grid-cols-1 sm:grid-cols-2">
-    {Projs.map((item, index) => (<>
-      <Card key={index} radius="none" className="min-w-[100%]">
-        <CardHeader className="flex gap-3">
-          <div className="flex flex-col">
-            <p className="text-md">{item.title}</p>
-            <p className="text-small text-default-500">{item.month}</p>
-          </div>
-        </CardHeader>
-        <Divider />
-        <CardBody>
-          <p>{item.jobdesc}</p>
-        </CardBody>
-        <Divider />
-      </Card>
-    </>))}
-  </div>
-</>)
+  const Projects = (<>
+    <div className="gap-0 grid grid-cols-1 sm:grid-cols-1">
+      {Projs.map((item, index) => (<>
+        <Card key={index} radius="none" className="max-w-[100%]">
+          <CardHeader className="flex gap-3">
+            <div className="flex flex-col">
+              <p className="text-md">{item.title}</p>
+              <p className="text-small text-default-500">{item.month}</p>
+            </div>
+          </CardHeader>
+          <Divider />
+          <CardBody>
+            <p>{item.jobdesc}</p>
+          </CardBody>
+          <Divider />
+        </Card>
+      </>))}
+    </div>
+  </>)
 
   const CardImage = (<Card radius="none" className="py-4">
     <CardBody className="overflow-visible py-2">
@@ -203,9 +173,9 @@ const Projects = (<>
     },
   ];
 
-  const skills = (<div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
+  const skills = (<div className="gap-3 grid grid-cols-2 sm:grid-cols-4">
     {list.map((item, index) => (
-      <Card style={{ cursor: "default" }} radius="none" key={index} isPressable shadow="sm">
+      <Card style={{ cursor: "default", borderLeft: "5px solid #3b5998" }} radius="none" key={index} isPressable shadow="sm">
         <CardBody className="text-small">
           <div className="font-bold">{item.title}</div>
           <div className="text-default-500">{item.price}</div>
@@ -213,6 +183,71 @@ const Projects = (<>
       </Card>
     ))}
   </div>);
+
+  const dialecte = (<>
+    <div className="flex flex-col sm:flex-row items-center gap-3">
+      <div className="flex gap-0">
+        <Link
+          isExternal
+          className={buttonStyles({
+            color: "primary",
+            radius: "none", size: "sm",
+            variant: "shadow",
+          })}
+          href={siteConfig.links.docs}
+        >
+          Documents
+        </Link>
+        <Link
+          isExternal
+          className={buttonStyles({
+            variant: "flat",
+            radius: "none", size: "sm"
+          })}
+          href={siteConfig.links.github}
+        >
+          <GithubIcon size={20} />
+          GitHub
+        </Link>
+      </div>
+      <div>
+        <div>Dialect English - Tagalog</div>
+      </div>
+    </div>
+  </>);
+
+  const MyExp = (<>
+    <div className="gap-3 grid grid-cols-1 sm:grid-cols-2">
+      {EXPLst.map((item, index) => (<>
+        <Card key={index} radius="none" className="max-w-[100%]">
+          <CardHeader className="flex gap-3">
+            <div className="flex flex-col">
+              <p className="text-md">{item.title}</p>
+              <p className="text-small text-default-500">{item.month}</p>
+            </div>
+          </CardHeader>
+          <Divider />
+          <CardBody>
+            <p>{item.jobdesc}</p>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <Link isExternal showAnchorIcon href={`${item.joblink}`}>
+              Visit Link
+            </Link>
+          </CardFooter>
+        </Card>
+      </>))}
+
+      <div>
+        <div className="py-2 font-bold">
+          <h2>Projects </h2>
+        </div>
+        {Projects}
+      </div>
+
+    </div>
+  </>)
 
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
@@ -228,57 +263,30 @@ const Projects = (<>
         </div>
       </div>
 
-      <div className="flex gap-3">
-        <Link
-          isExternal
-          className={buttonStyles({
-            color: "primary",
-            radius: "none",
-            variant: "shadow",
-          })}
-          href={siteConfig.links.docs}
-        >
-          Documents
-        </Link>
-        <Link
-          isExternal
-          className={buttonStyles({ variant: "bordered", radius: "none" })}
-          href={siteConfig.links.github}
-        >
-          <GithubIcon size={20} />
-          GitHub
-        </Link>
+      {dialecte}
+
+      <div>
+        <div className="py-2 font-bold">
+          <h2>Education</h2>
+        </div>
+        {Educations}
       </div>
 
       <div>
-        <div>Dialect: English - Tagalog</div>
-      </div>
-
-      <div>
-        <div className="py-5 font-bold">
-          <h2>Key Skills:</h2>
+        <div className="py-2 font-bold">
+          <h2>Key Skills</h2>
         </div>
         {skills}
       </div>
 
       <div>
-        <div className="py-5 font-bold">
-          <h2>Key Experience:</h2>
+        <div className="py-2 font-bold">
+          <h2>Key Experience</h2>
         </div>
         {MyExp}
       </div>
-      <div>
-        <div className="py-5 font-bold">
-          <h2>Education :</h2>
-        </div>
-        {Educations}
-      </div>
-      <div>
-        <div className="py-5 font-bold">
-          <h2>Projects :</h2>
-        </div>
-        {Projects}
-      </div>
+
+      
 
       <div className="mt-8">
         <Snippet radius="none" hideCopyButton hideSymbol variant="bordered">

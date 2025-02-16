@@ -47,15 +47,9 @@ export default function RootLayout({
             <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
               {children}
             </main>
-            <footer className="w-full flex items-center justify-center py-3">
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                title="Jr. Software Developer"
-              >
-                <span className="text-default-600">Joebanezair Buatona</span>
-                <p className="text-primary">- Jr. Software Developer</p>
-              </Link>
+            <footer className="w-full gap-2 flex-col text-center sm:flex-row items-center justify-center py-10">
+            <div className="text-default-600">Joebanezair Buatona</div>
+            <div className="text-primary " style={{fontSize: 12}}>Jr. Software Developer</div>
             </footer>
           </div>
         </Providers>
